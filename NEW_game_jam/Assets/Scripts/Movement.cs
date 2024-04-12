@@ -8,10 +8,7 @@ public class Movement : MonoBehaviour
 {
     private SpriteRenderer _characterSprite;      //что-то для спрайта смотреть в 1 уроке
     private CharacterAnim _animations;            //анимации смотреть в 1 уроке
-    public Transform GroundCheck;                 //сущность для проверки, что это земля(как я понял) 2 урок
-    public LayerMask whatIsground;                //то что мы будем в на карте называть землёй 
-    public float radgroundCheck;                  //радиус проверки, что игрок на земле 
-    private bool IsGrounded;                      //проверка, что игрок на земле или нет 
+
     public float _jumpForce;                      //Сила прыжка
     public float _speed;                          //скорость 
     private Vector3 _input;                       //тупо вектор который будет получать значения
@@ -28,12 +25,14 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        IsGrounded = Physics2D.OverlapCircle(GroundCheck.position, radgroundCheck, whatIsground); //во втором уроке объяснили как это работает
-        move(); //вызываем метод move
-        if (Input.GetKey(KeyCode.Space)&& IsGrounded) //проверка, что игрок нажимет space и то что игрок на земле 
+        _input = new Vector2(Input.GetAxis("Horizontal"), 0);    //хз, мозги кипят уже
+        transform.position += _input * _speed * Time.deltaTime;         //вычесление для передвижения и сама ходьба 
+        if (Input.GetKey(KeyCode.Space)&& Mathf.Abs(_rigidbody.velocity.y)< 0.05f) //проверка, что игрок нажимет space и то что игрок на земле 
+        //есть странная вещь, что при достижение определённой высоты можно сделать двойной прыжок, но если с цифрами поиграть такого не будет
         {
             Jump(); //вызываем метод jump 
         }
+        move(); //делает поворот героя и анимацию стопа (если они есть)
     }
 
     private void Jump()
@@ -45,8 +44,7 @@ public class Movement : MonoBehaviour
 
     private void move()
     {
-        _input = new Vector2(Input.GetAxis("Horizontal"), 0);    //хз, мозги кипят уже
-        transform.position += _input * _speed * Time.deltaTime;         //вычесление для передвижения и сама ходьба 
+        
         _isMoving = _input.x != 0 ? true : false;                       //для анимации, что бы игрок мог остановиться
         if (_isMoving)
         {
