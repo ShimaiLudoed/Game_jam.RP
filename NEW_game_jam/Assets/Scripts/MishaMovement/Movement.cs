@@ -45,11 +45,7 @@ public class Movement : MonoBehaviour
     private void move()
     {
         
-        _isMoving = _input.x != 0 ? true : false;                       //для анимации, что бы игрок мог остановиться
-        if (_isMoving)
-        {
-            _characterSprite.flipX = _input.x > 0 ? false : true;         //хз что это 
-        }
+
 
      
     }
