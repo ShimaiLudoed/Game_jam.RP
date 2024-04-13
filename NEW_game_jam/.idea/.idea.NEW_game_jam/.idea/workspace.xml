@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="82bc6f19-42fb-4ff1-9310-befefda985bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NEW_game_jam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NEW_game_jam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cameramove.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cameramove.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterAnim.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterAnim.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EvgenMovement/FollowCam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EvgenMovement/FollowCam.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712953704597</updated>
       <workItem from="1712953718667" duration="4700000" />
-      <workItem from="1712984323953" duration="2867000" />
+      <workItem from="1712984323953" duration="3496000" />
     </task>
     <servers />
   </component>
