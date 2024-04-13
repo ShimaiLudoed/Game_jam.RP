@@ -385,12 +385,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 7549594}
-  animator: {fileID: 0}
   EnemyLay:
     serializedVersion: 2
     m_Bits: 64
   attackRange: 0.98
-  attackDamge: 40
+  attackDamage: 40
 --- !u!1 &1410946547
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +403,7 @@ GameObject:
   - component: {fileID: 1410946551}
   - component: {fileID: 1410946550}
   - component: {fileID: 1410946552}
+  - component: {fileID: 1410946553}
   m_Layer: 6
   m_Name: Circle
   m_TagString: Player
@@ -553,6 +553,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 150
+--- !u!114 &1410946553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410946547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ab0868c21e12b4d912c969f20844b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  stoppingDistance: 1
+  attackRange: 1
 --- !u!1 &1570998516
 GameObject:
   m_ObjectHideFlags: 0
