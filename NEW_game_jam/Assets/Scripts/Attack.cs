@@ -9,11 +9,12 @@ public class Attack : MonoBehaviour
     public Animator animator;
     public LayerMask EnemyLay;
     public float attackRange = 0.5f;
-    
+
+    public int attackDamge = 40;
     //cредний фаербол
     void Update()
     {
-        if (Input.GetKey(KeyCode.K))
+        if (Input.GetMouseButton(0))
         {
           
             attack();
@@ -29,7 +30,10 @@ public class Attack : MonoBehaviour
         //damage
         foreach (Collider2D enemy in hitEnemy)
         {
+            
          Debug.Log("We hit"+enemy.name);   
+         enemy.GetComponent<Enemy>().takeDamage(attackDamge);
+         
         }
     }
 
