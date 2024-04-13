@@ -23,16 +23,13 @@ public class Attack : MonoBehaviour
 
     public void attack()
     {
-        //player animation
-      
-        //detected enem
         Collider2D[] hitEnemy= Physics2D.OverlapCircleAll(attackPoint.position, attackRange, EnemyLay);
-        //damage
+
         foreach (Collider2D enemy in hitEnemy)
         {
             
          Debug.Log("We hit"+enemy.name);   
-         enemy.GetComponent<Enemy>().takeDamage(attackDamge);
+         enemy.GetComponent<Enemy>().TakeDamage(attackDamge);
          
         }
     }

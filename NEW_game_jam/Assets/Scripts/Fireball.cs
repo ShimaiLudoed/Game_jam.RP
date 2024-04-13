@@ -13,7 +13,7 @@ public class Fireball : MonoBehaviour
 
         if (enemy != null)
         {
-            enemy.takeDamage(damage);
+            enemy.TakeDamage(damage);
         }
 
         GameObject effect = Instantiate(HitEffect, transform.position, Quaternion.identity);

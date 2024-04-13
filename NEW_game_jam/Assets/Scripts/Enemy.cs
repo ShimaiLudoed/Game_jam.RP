@@ -6,7 +6,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int maxHealth = 150;
-
     private int currentHealth;
 
     private void Start()
@@ -14,7 +13,7 @@ public class Enemy : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void takeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)
@@ -25,7 +24,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("enemy died");
+        Debug.Log("ENEMY DEAD");
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
