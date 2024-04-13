@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5705040322206009589}
   - component: {fileID: 1170075303295820083}
-  - component: {fileID: 5807852012988957028}
   - component: {fileID: 1873360366160959334}
   - component: {fileID: 4954226068642823681}
+  - component: {fileID: 2985079681487085781}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: VRAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5807852012988957028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385191411239238665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17b29453bd07878449940a436695ba87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 150
 --- !u!61 &1873360366160959334
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,3 +159,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2985079681487085781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385191411239238665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5080b881b7529a44597798661b2b2116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
