@@ -9,13 +9,14 @@ public class Enemy : MonoBehaviour
 
     private int currentHealth;
 
-    private void Start()
+     void Start()
     {
         currentHealth = maxHealth;
     }
 
     public void takeDamage(int damage)
     {
+        Debug.Log("Taking damage: " +  damage);
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
