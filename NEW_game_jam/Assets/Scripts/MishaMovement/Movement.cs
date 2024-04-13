@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     public float _jumpForce;                      //Сила прыжка
     public float _speed;                          //скорость 
     private Vector3 _input;                       //тупо вектор который будет получать значения
-    private Rigidbody2D _rigidbody;               //ссылка на компонент (хз, что это) 
+    private Rigidbody2D _rigidbody;               //ссылка на компонент (хз, что это)     ==     скорее всего, тело игрока
 
     private bool _isMoving;
   
