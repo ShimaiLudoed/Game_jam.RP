@@ -12,7 +12,7 @@ public class Shooting : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             Shoot();
         }
@@ -23,7 +23,5 @@ public class Shooting : MonoBehaviour
         GameObject bullet = Instantiate(fireballPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-        
-        
     }
 }
