@@ -130,7 +130,6 @@ public class AIAlly : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         gameObject.tag = "DeadAlly";
         this.enabled = false;
-        
     }
 
     public void ReviveAndAlly()
@@ -147,4 +146,4 @@ public class AIAlly : MonoBehaviour
 
         Gizmos.DrawWireSphere(nose.position, attackRange);
     }
-}    
+}
