@@ -22,7 +22,7 @@ public class Necromancer : MonoBehaviour
             if (Vector3.Distance(transform.position, enemy.transform.position) <= summonRange)
             {
                 enemy.SetActive(true);
-                enemy.GetComponent<EnemyController>().ReviveAndAlly(); // Вызываем метод возрождения у врага
+                enemy.GetComponent<AIEnemy>().ReviveAndAlly(); // Вызываем метод возрождения у врага
             }
         }
     }

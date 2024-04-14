@@ -7,7 +7,7 @@ public class Melee : MonoBehaviour
     public Transform attackPoint; 
     //public Animator animator; 
     public LayerMask EnemyLay; 
-    public float attackRange = 0.5f; 
+    public float attackRange = 1.5f;
  
     public int attackDamage = 40; 
     
@@ -17,7 +17,7 @@ public class Melee : MonoBehaviour
     { 
         if (isAttacking) 
         { 
-            return; 
+            return;
         } 
  
         if (Input.GetMouseButtonDown(0)) 
@@ -35,7 +35,7 @@ public class Melee : MonoBehaviour
         foreach (Collider2D enemy in hitEnemy) 
         { 
             Debug.Log("We hit " + enemy.name); 
-            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage); 
+            enemy.GetComponent<AIEnemy>().TakeDamage(attackDamage); 
         } 
         
         yield return new WaitForSeconds(0.5f); //кулдаун на атаку 5 мс

@@ -9,7 +9,7 @@ public class Fireball : MonoBehaviour
     public int damage = 25;
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+        AIEnemy enemy = collision.gameObject.GetComponent<AIEnemy>();
 
         if (enemy != null)
         {

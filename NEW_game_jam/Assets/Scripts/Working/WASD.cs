@@ -6,7 +6,7 @@ using UnityEngine;
 public class WASD : MonoBehaviour
 {
     public bool moving = false;
-    private float speed = 7.0f;
+    private float speed = 10f;
 
     public void Start()
     {
