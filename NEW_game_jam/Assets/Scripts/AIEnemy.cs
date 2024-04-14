@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AIEnemy : MonoBehaviour
 {
-    public Necromancer necro;
+    //public Necromancer necro;
     public PlayerInfo PI;
     public AIAlly AA;
     
@@ -13,14 +13,15 @@ public class AIEnemy : MonoBehaviour
     private Transform ally;
     private Transform nose;
     public LayerMask PlayerLay;
+    public LayerMask AllyLay;
     
-    public float fov;
-    public float speed;
-    public float attackRange = 1.5f;
-    public int maxHealth;
-    public int currentHealt;
-    public int damage = 20;
-    public bool atacking = false;
+    public float fov;                             //поле зрения
+    public float speed;                           //скорость передвижения
+    public float attackRange = 1.5f;              //радиус атаки
+    public int maxHealth;                         //максимальное здоровье
+    public int currentHealt;                      //актуальное здоровье
+    public int damage = 20;                       //урон в секунду
+    public bool atacking = false;                 //статус атаки (атакует или нет)
     
     public bool alive = true;
     private bool angry = false;
@@ -38,28 +39,33 @@ public class AIEnemy : MonoBehaviour
     
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.position) < fov || Vector2.Distance(transform.position, ally.position) < fov)
+        if (Vector2.Distance(transform.position, player.position) < fov)
         {
-            Angry();
+            AngryPlayer();
         }
         
-        if (Vector2.Distance(transform.position, player.position) < attackRange || Vector2.Distance(transform.position, ally.position) < attackRange)
+        if (Vector2.Distance(transform.position, player.position) < attackRange)
         { 
-            StartCoroutine(AttackCoroutine());
+            
         } 
     }
     
-    public void Angry()
+    public void AngryPlayer()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+    }
+    
+    public void AngryAlly()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, ally.position, speed * Time.deltaTime);
 
         if (AA.tag == "DeadAlly")
         {
-            Angry();
+            AngryPlayer();
         }
     }
     
-    IEnumerator AttackCoroutine() 
+    IEnumerator AttackCoroutineAlly() 
     {
         if (AA.gameObject.tag != "DeadAlly")
         {
