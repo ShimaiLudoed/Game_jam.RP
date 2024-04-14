@@ -5,31 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bfac566-dabb-4e9a-8548-7b3fc5a4b5ba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AIEnemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NEW_game_jam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NEW_game_jam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fireball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fireball.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyMove.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyMove.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIEnemy.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Necromancer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Necromancer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Working/Fireball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Working/Fireball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Working/Melee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Working/Melee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Working/WASD.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Working/WASD.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/broken.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/broken/AIMove.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/broken/AIMove.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/broken/Enemy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/broken/Enemy.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/broken/EnemyAI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/broken/EnemyAI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/broken/EnemyManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/broken/EnemyManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/enemyContrl.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/enemyContrl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/VRAG.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/VRAG.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIAlly.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIAlly.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ally.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ally.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,4 +105,23 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/AIEnemy.cs</url>
+          <line>43</line>
+          <properties documentPath="E:\Unity Projects\Game_jam.RP\NEW_game_jam\Assets\Scripts\AIEnemy.cs" initialLine="43" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="976" />
+            </startOffsets>
+            <endOffsets>
+              <option value="983" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
 </project>

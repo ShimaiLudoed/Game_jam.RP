@@ -18,11 +18,14 @@ public class AIAlly : MonoBehaviour
     public int maxHealth;
     public int currentHealt;
     public int damage = 20;
+    public int playerCheck;
     
     public bool alive = true;
     private bool angry = false;
     private bool chill = true;
     public bool atacking = false;
+    
+    public List<Transform> allEnemies = new List<Transform>();
 
     void Start()
     {
@@ -32,15 +35,33 @@ public class AIAlly : MonoBehaviour
         AE = FindObjectOfType<AIEnemy>();
         
         currentHealt = maxHealth;
+        
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            allEnemies.Add(enemy.transform);
+        }
     }
     
     void Update()
     {
         if (Vector2.Distance(transform.position, enemy.position) < fov && AE.alive == true)
         {
+            chill = false;
+            angry = true;
+        }
+        else if (Vector2.Distance(transform.position, enemy.position) > fov)
+        {
+            angry = false;
+            chill = true;
+        }
+
+        if (angry)
+        {
             Angry();
         }
-        else //if (Vector2.Distance(transform.position, enemy.position) > fov)
+        
+        if (chill)
         {
             Chill();
         }
@@ -53,7 +74,12 @@ public class AIAlly : MonoBehaviour
         if (Vector2.Distance(transform.position, enemy.position) < attackRange)
         { 
             StartCoroutine(AttackCoroutine());
-        } 
+        }
+
+        if (allEnemies.Count == 0)
+        {
+            Chill();
+        }
     }
 
     void Chill()
@@ -64,7 +90,6 @@ public class AIAlly : MonoBehaviour
     public void Angry()
     {
         transform.position = Vector2.MoveTowards(transform.position, enemy.position, speed * Time.deltaTime);
-        Update();
     }
     
     IEnumerator AttackCoroutine()
@@ -73,20 +98,26 @@ public class AIAlly : MonoBehaviour
         
         Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(nose.position, attackRange, EnemyLay);
         
-        foreach (Collider2D enemy in hitEnemy) 
+        foreach (Collider2D enemyCollider in hitEnemy) 
         { 
-            Debug.Log("Boss, I hitted  " + enemy.name);
-            enemy.GetComponent<AIEnemy>().TakeDamage(damage);
-
-            if (AE.alive == false)
+            Debug.Log("Boss, I hitted " + enemyCollider.name);
+            
+            enemyCollider.GetComponent<AIEnemy>().TakeDamage(damage);
+            
+            if (!enemyCollider.GetComponent<AIEnemy>().alive)
             {
-                Debug.Log("Boss, I KILLED  " + enemy.name);
+                Debug.Log("Boss, I KILLED " + enemyCollider.name);
+                allEnemies.Remove(enemyCollider.transform);
             }
         } 
         
-        yield return new WaitForSeconds(1f); //кулдаун на атаку 5 мс
+        if (allEnemies.Count > 0)
+        {
+            enemy = allEnemies[Random.Range(0, allEnemies.Count)];
+        }
         
-        atacking = false; 
+        yield return new WaitForSeconds(1f); 
+        atacking = false;
     } 
 
     public void TakeDamage(int damage)
