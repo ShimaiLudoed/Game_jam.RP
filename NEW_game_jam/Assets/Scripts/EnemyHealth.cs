@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public bool Alive = true;
     public int maxHealth=100;
     public int currentHealt;
-    private Necromancer necr;
+    private EnemyController _enemyContrl;
     
     void Start()
     {
@@ -23,15 +23,8 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealt <= 0)
         {
-            Die();
+            _enemyContrl.Die();
         }
-        
-    }
-
-    void Die()
-    {
-        Debug.Log("enemy Died");
-        
         
     }
 }

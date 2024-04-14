@@ -4,33 +4,32 @@ using UnityEngine;
 
 public class Necromancer : MonoBehaviour
 {
-    public KeyCode summonKey = KeyCode.E;
-    public float summonRange = 5f;
-    public LayerMask enemyLayer;
-    public EnemyHealth enem;
-    private List<GameObject> deadEnemies = new List<GameObject>();
-    private Transform Enemy;
+    public List<GameObject> deadEnemies = new List<GameObject>(); // Список мертвых врагов
+    public float summonRange = 5f; // Радиус возрождения
 
     void Update()
     {
-        Enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
-        if (Input.GetKeyDown(summonKey))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            foreach (GameObject enemy in deadEnemies)
+            SummonAllies(); // Вызываем метод возрождения союзников при нажатии клавиши E
+        }
+    }
+
+    void SummonAllies()
+    {
+        foreach (GameObject enemy in deadEnemies)
+        {
+            if (Vector3.Distance(transform.position, enemy.transform.position) <= summonRange)
             {
-                if (Vector2.Distance(transform.position, enemy.transform.position) <= summonRange)
-                {
-                    
-                    enemy.SetActive(true);
-                    // Сделать врага союзником
-                    enemy.GetComponent<enemyContrl>().MakeAlly();
-                }
+                enemy.SetActive(true);
+                enemy.GetComponent<EnemyController>().ReviveAndAlly(); // Вызываем метод возрождения у врага
             }
         }
     }
 
+    // Ваши методы для добавления и удаления мертвых врагов
     public void AddDeadEnemy(GameObject enemy)
-    { 
+    {
         deadEnemies.Add(enemy);
     }
 
@@ -38,4 +37,5 @@ public class Necromancer : MonoBehaviour
     {
         deadEnemies.Remove(enemy);
     }
+    
 }
