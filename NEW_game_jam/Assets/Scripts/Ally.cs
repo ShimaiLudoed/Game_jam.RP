@@ -1,38 +1,63 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Ally : MonoBehaviour
 {
-    public Transform target; // цель, за которой должны следовать союзные персонажи
-    public float followDistance = 3f; // расстояние, на котором должны находиться союзные персонажи от цели
-    public float attackRange = 1f; // расстояние, на котором союзные персонажи должны начинать атаковать врагов
-    public int speed;
+    public Transform player; // ссылка на главного героя
+    public float followDistance = 3f; // расстояние, на котором персонаж должен следовать за игроком
+    public float attackDistance = 1f; // расстояние, на котором персонаж должен атаковать врага
+
+    private Transform target; // цель, за которой следит персонаж
+    private bool isAttacking = false; // флаг для проверки, атакует ли персонаж врага
+
+
+    private void Start()
+    {
+
+        
+    }
+
     private void Update()
     {
-        if (target != null)
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        
+        if (!target)
         {
-            // Рассчитываем расстояние между текущим персонажем и целью
-            float distance = Vector2.Distance(transform.position, target.position);
-
-            // Если расстояние больше followDistance, двигаемся к цели
-            if (distance > followDistance)
+            if (distanceToPlayer < followDistance)
             {
-                transform.position = Vector3.MoveTowards(transform.position, target.position, speed* Time.deltaTime);
+                target = player;
             }
-
-            // Если расстояние меньше attackRange, атакуем ближайшего врага
-            if (distance < attackRange)
+            else
             {
-                Attack();
+                // возвращаемся к главному герою
+                transform.position = Vector2.MoveTowards(transform.position, player.position, Time.deltaTime);
             }
         }
-    }
-
-    private void Attack()
-    {
-        // Реализация атаки на ближайшего врага 
-        // Например, вызов анимации атаки или уменьшение здоровья врага
-    }
-
+        else
+        {
+            if (distanceToPlayer > followDistance)
+            {
+                target = null;
+            }
+            else if (distanceToPlayer < attackDistance)
+            {
+                isAttacking = true;
+            }
+            
+            if (isAttacking)
+            {
+                // атакуем врага
+                target.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime);
+    
+                if (Vector2.Distance(transform.position, target.position) < 0.1f)
+                {
+                    Destroy(target.gameObject);
+                    target = null;
+                    isAttacking = false;
+                }
+            }
+        }
+    } 
 }
