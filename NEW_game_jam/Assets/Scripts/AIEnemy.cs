@@ -41,7 +41,7 @@ public class AIEnemy : MonoBehaviour
         
         if (atacking) 
         { 
-            return;
+           
         } 
         
         if (Vector2.Distance(transform.position, player.position) < attackRange)
