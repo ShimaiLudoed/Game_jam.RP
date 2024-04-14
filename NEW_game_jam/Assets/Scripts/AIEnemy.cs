@@ -39,11 +39,6 @@ public class AIEnemy : MonoBehaviour
             Angry();
         }
         
-        if (atacking) 
-        { 
-           
-        } 
-        
         if (Vector2.Distance(transform.position, player.position) < attackRange)
         { 
             StartCoroutine(AttackCoroutine());

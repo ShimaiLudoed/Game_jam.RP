@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bfac566-dabb-4e9a-8548-7b3fc5a4b5ba" name="Changes" comment="" />
+    <list default="true" id="1bfac566-dabb-4e9a-8548-7b3fc5a4b5ba" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIAlly.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIAlly.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIEnemy.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,23 +101,4 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/AIEnemy.cs</url>
-          <line>43</line>
-          <properties documentPath="E:\Unity Projects\Game_jam.RP\NEW_game_jam\Assets\Scripts\AIEnemy.cs" initialLine="43" containingFunctionPresentation="Method 'Update'">
-            <startOffsets>
-              <option value="976" />
-            </startOffsets>
-            <endOffsets>
-              <option value="983" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
 </project>

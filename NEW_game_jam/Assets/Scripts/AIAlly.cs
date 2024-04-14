@@ -18,6 +18,8 @@ public class AIAlly : MonoBehaviour
     public int maxHealth;
     public int currentHealt;
     public int damage = 20;
+    public int desiredChillDistance;
+    
 
     public bool alive = true;
     private bool angry = false;
@@ -70,7 +72,10 @@ public class AIAlly : MonoBehaviour
 
     void Chill()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        if (Vector2.Distance(transform.position, player.position) > desiredChillDistance) 
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        }
     }
 
     public void Angry()
