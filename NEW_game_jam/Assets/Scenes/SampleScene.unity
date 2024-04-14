@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 868288833}
   m_Layer: 0
   m_Name: Static Sprite (4)
-  m_TagString: enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1162,7 +1162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d695facb888743408b68e00b1c18334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Alive: 1
   maxHealth: 100
+  currentHealt: 0
 --- !u!114 &1111464912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1401,8 +1403,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  target: {fileID: 440463671}
-  followDistance: 5
+  Point: {fileID: 0}
+  PosOfPat: 0
+  StoppingDistance: 0
 --- !u!212 &2033623417
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1546,7 +1549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1385191411239238665, guid: 34e9669a15e75e1489023378bbe3eb7d, type: 3}
       propertyPath: m_TagString
-      value: enemy
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5705040322206009589, guid: 34e9669a15e75e1489023378bbe3eb7d, type: 3}
       propertyPath: m_LocalPosition.x
