@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bfac566-dabb-4e9a-8548-7b3fc5a4b5ba" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NEW_game_jam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NEW_game_jam/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIAlly.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIAlly.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIEnemy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713033635827</updated>
       <workItem from="1713033638111" duration="3096000" />
-      <workItem from="1713120262879" duration="1867000" />
+      <workItem from="1713120262879" duration="5371000" />
     </task>
     <servers />
   </component>

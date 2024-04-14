@@ -10,11 +10,8 @@ public class Fireball : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         AIEnemy enemy = collision.gameObject.GetComponent<AIEnemy>();
-
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
-        }
+        
+        if ()
 
         GameObject effect = Instantiate(HitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 1f);

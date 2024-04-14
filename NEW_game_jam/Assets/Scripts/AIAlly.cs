@@ -118,6 +118,7 @@ public class AIAlly : MonoBehaviour
 
         if (currentHealt <= 0)
         {
+            atacking = false;
             Dead();
         }
     }
@@ -125,9 +126,11 @@ public class AIAlly : MonoBehaviour
     public void Dead()
     {
         alive = false;
+        atacking = false;
         GetComponent<Collider2D>().enabled = false;
         gameObject.tag = "DeadAlly";
         this.enabled = false;
+        
     }
 
     public void ReviveAndAlly()

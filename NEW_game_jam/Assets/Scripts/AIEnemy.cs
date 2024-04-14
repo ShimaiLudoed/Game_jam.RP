@@ -11,7 +11,7 @@ public class AIEnemy : MonoBehaviour
     
     private Transform player;                     //ссылка на игрока (player)
     private Transform ally;                       //ссылка на союзника (ally)
-    private Transform nose;                       //ссылка на "нос" - куда смотрит юнит
+    public Transform nose;                        //ссылка на "нос" - куда смотрит юнит
     public LayerMask PlayerLay;
     public LayerMask AllyLay;
     
@@ -20,9 +20,10 @@ public class AIEnemy : MonoBehaviour
     public float attackRange = 1.5f;              //радиус атаки
     public int maxHealth;                         //максимальное здоровье
     public int currentHealt;                      //актуальное здоровье
-    public int damage = 20;                       //урон в секунду
-    public bool atacking = false;                 //статус атаки (атакует или нет)
+    public int damage;                            //урон в секунду
     
+    
+    public bool atacking = false;                 //статус атаки (атакует или нет)
     public bool alive = true;                     //статус жив/мёртв
     private bool angry = false;                   //статус атаки
 
@@ -45,19 +46,36 @@ public class AIEnemy : MonoBehaviour
         }
         
         if (Vector2.Distance(transform.position, player.position) < attackRange)
-        { 
-            
-        } 
+        {
+            StartCoroutine(AttackCoroutinePlayer());
+        }
+
+        if (Vector2.Distance(transform.position, ally.position) < fov)
+        {
+            AngryAlly();
+        }
+
+        if (Vector2.Distance(transform.position, ally.position) < attackRange)
+        {
+            StartCoroutine(AttackCoroutineAlly());
+        }
+        
     }
     
     public void AngryPlayer()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        if (Vector2.Distance(transform.position, player.position) > attackRange - 1f) 
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        }
     }
     
     public void AngryAlly()
     {
-        transform.position = Vector2.MoveTowards(transform.position, ally.position, speed * Time.deltaTime);
+        if (Vector2.Distance(transform.position, ally.position) > attackRange - 1f) 
+        {
+            transform.position = Vector2.MoveTowards(transform.position, ally.position, speed * Time.deltaTime);
+        }
 
         if (AA.tag == "DeadAlly")
         {
@@ -65,29 +83,36 @@ public class AIEnemy : MonoBehaviour
         }
     }
     
+    IEnumerator AttackCoroutinePlayer() 
+    {
+        if (!atacking)  // Проверяем, не атакует ли враг уже
+        {
+            atacking = true;  // Устанавливаем статус атаки
+
+            Debug.Log("You were hit by the enemy");
+            PI.TakeDamagePlayer(damage);
+
+            yield return new WaitForSeconds(1f);  // Задержка на перезарядку атаки
+
+            atacking = false;  // После перезарядки сбрасываем статус атаки
+        }
+    }
+    
     IEnumerator AttackCoroutineAlly() 
     {
-        if (AA.gameObject.tag != "DeadAlly")
+        if (!atacking)  // Проверяем, не атакует ли враг уже
         {
-            atacking = true;
-        
-            Debug.Log("Ally was hitted from " + player.name);
+            atacking = true;  // Устанавливаем статус атаки
+
+            Debug.Log("You were hit by the enemy");
             AA.TakeDamageAlly(damage);
-        
-            yield return new WaitForSeconds(1f); //кулдаун на атаку
-        
-            atacking = false;
+
+            yield return new WaitForSeconds(1f);  // Задержка на перезарядку атаки
+
+            atacking = false;  // После перезарядки сбрасываем статус атаки
         }
-        
-        atacking = true;
-        
-        Debug.Log("You was hitted from " + player.name);
-        PI.TakeDamagePlayer(damage);
-        
-        yield return new WaitForSeconds(1f); //кулдаун на атаку
-        
-        atacking = false;
-    } 
+    }
+    
 
     public void TakeDamage(int damage)
     {
@@ -95,6 +120,7 @@ public class AIEnemy : MonoBehaviour
 
         if (currentHealt <= 0)
         {
+            atacking = false;
             Dead();
         }
     }
@@ -102,6 +128,7 @@ public class AIEnemy : MonoBehaviour
     public void Dead()
     {
         alive = false;
+        atacking = false;
         //necro.AddDeadEnemy(gameObject);
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
