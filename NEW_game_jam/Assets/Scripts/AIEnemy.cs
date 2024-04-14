@@ -129,7 +129,7 @@ public class AIEnemy : MonoBehaviour
     {
         alive = false;
         atacking = false;
-        //necro.AddDeadEnemy(gameObject);
+        
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         gameObject.tag = "Dead";

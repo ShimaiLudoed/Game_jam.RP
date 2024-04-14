@@ -27,6 +27,6 @@ public class PlayerInfo : MonoBehaviour
 
     void GameOver()
     {
-        return;
+        Debug.Log("YOU ARE DEAD!");
     }
 }
