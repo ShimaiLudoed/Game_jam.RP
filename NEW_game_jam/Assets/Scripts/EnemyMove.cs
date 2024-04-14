@@ -25,7 +25,7 @@ public class EnemyMove : MonoBehaviour
         {
             chill = true;
         }
-        if (Vector2.Distance(transform.position, Point.position) < StoppingDistance)
+        if (Vector2.Distance(transform.position, player.position) < StoppingDistance)
         {
             angry = true;
             chill = false;
