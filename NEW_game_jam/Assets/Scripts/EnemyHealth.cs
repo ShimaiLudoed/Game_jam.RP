@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     private bool Alive = true;
     public int maxHealth=100;
-    private int currentHealt;
+    public int currentHealt;
     void Start()
     {
         currentHealt = maxHealth;

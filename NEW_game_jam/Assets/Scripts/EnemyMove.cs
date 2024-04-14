@@ -12,7 +12,7 @@ public class EnemyMove : MonoBehaviour
     public float StoppingDistance;
     private bool chill = false;
     private bool angry = false;
- 
+    private Transform ally;
 
     void Start()
     {
@@ -21,6 +21,7 @@ public class EnemyMove : MonoBehaviour
     
     void Update()
     {
+   
         if (Vector2.Distance(transform.position, Point.position) < PosOfPat&&angry==false)
         {
             chill = true;

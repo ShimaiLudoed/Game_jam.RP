@@ -5,59 +5,54 @@ using UnityEngine;
 
 public class Ally : MonoBehaviour
 {
-    public Transform player; // ссылка на главного героя
-    public float followDistance = 3f; // расстояние, на котором персонаж должен следовать за игроком
-    public float attackDistance = 1f; // расстояние, на котором персонаж должен атаковать врага
+    public float speed;
+    public Transform Point;
+    public int PosOfPat;
+    private bool MovingRight = true;
+    private Transform player;
+    public float StoppingDistance;
+    private bool chill = false;
+    private bool angry = false;
+    private Transform enemy;
 
-    private Transform target; // цель, за которой следит персонаж
-    private bool isAttacking = false; // флаг для проверки, атакует ли персонаж врага
-
-
-    private void Start()
+    void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
+    }
+    
+    void Update()
+    {
+      
+        if (Vector2.Distance(transform.position, player.position) < PosOfPat&&angry==false)
+        {
+            chill = true;
+        }
+        if (Vector2.Distance(transform.position, enemy.position) < StoppingDistance)
+        {
+            angry = true;
+            chill = false;
+        }
         
+
+        if (chill==true)
+        {
+            Chill();
+        }
+
+        else if (angry==true)
+        {
+            Angry();
+        }
     }
 
-    private void Update()
+    void Chill()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        
-        if (!target)
-        {
-            if (distanceToPlayer < followDistance)
-            {
-                target = player;
-            }
-            else
-            {
-                // возвращаемся к главному герою
-                transform.position = Vector2.MoveTowards(transform.position, player.position, Time.deltaTime);
-            }
-        }
-        else
-        {
-            if (distanceToPlayer > followDistance)
-            {
-                target = null;
-            }
-            else if (distanceToPlayer < attackDistance)
-            {
-                isAttacking = true;
-            }
-            
-            if (isAttacking)
-            {
-                // атакуем врага
-                target.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime);
-    
-                if (Vector2.Distance(transform.position, target.position) < 0.1f)
-                {
-                    Destroy(target.gameObject);
-                    target = null;
-                    isAttacking = false;
-                }
-            }
-        }
-    } 
+        transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+    }
+
+    void Angry()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, enemy.position, speed * Time.deltaTime);
+    }
 }
