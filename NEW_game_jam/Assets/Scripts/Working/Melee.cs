@@ -35,7 +35,7 @@ public class Melee : MonoBehaviour
         foreach (Collider2D enemy in hitEnemy) 
         { 
             Debug.Log("We hit " + enemy.name); 
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage); 
+            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage); 
         } 
         
         yield return new WaitForSeconds(0.5f); //кулдаун на атаку 5 мс
