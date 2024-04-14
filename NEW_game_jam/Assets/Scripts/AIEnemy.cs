@@ -88,6 +88,7 @@ public class AIEnemy : MonoBehaviour
         //necro.AddDeadEnemy(gameObject);
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+        gameObject.tag = "Dead";
     }
     
     public void ReviveAndAlly()
