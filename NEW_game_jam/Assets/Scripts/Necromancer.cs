@@ -18,9 +18,9 @@ public class Necromancer : MonoBehaviour
         {
             foreach (GameObject enemy in deadEnemies)
             {
-                if (Vector3.Distance(transform.position, enemy.transform.position) <= summonRange)
+                if (Vector2.Distance(transform.position, enemy.transform.position) <= summonRange)
                 {
-                    // Возродить врага
+                    
                     enemy.SetActive(true);
                     // Сделать врага союзником
                     enemy.GetComponent<enemyContrl>().MakeAlly();
@@ -30,12 +30,8 @@ public class Necromancer : MonoBehaviour
     }
 
     public void AddDeadEnemy(GameObject enemy)
-    {
-        if (enem.currentHealt == 0)
-        {
-            deadEnemies.Add(enemy);
-        }
-        
+    { 
+        deadEnemies.Add(enemy);
     }
 
     public void RemoveDeadEnemy(GameObject enemy)
