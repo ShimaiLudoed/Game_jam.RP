@@ -29,4 +29,16 @@ public class PlayerInfo : MonoBehaviour
     {
         Debug.Log("YOU ARE DEAD!");
     }
+    
+}
+public class PlayerHealth : MonoBehaviour
+{
+    // Событие или делегат для смерти игрока
+    public static event System.Action PlayerDeath;
+
+    public void Die()
+    {
+        // Вызываем событие о смерти игрока, если есть подписчики
+        PlayerDeath?.Invoke();
+    }
 }
