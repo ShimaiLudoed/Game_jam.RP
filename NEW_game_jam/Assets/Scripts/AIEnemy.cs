@@ -6,12 +6,12 @@ using UnityEngine;
 public class AIEnemy : MonoBehaviour
 {
     //public Necromancer necro;
-    public PlayerInfo PI;
-    public AIAlly AA;
+    public PlayerInfo PI;                         //экземпляр игрока (player)
+    public AIAlly AA;                             //экзепляр союзника (ally)
     
-    private Transform player;
-    private Transform ally;
-    private Transform nose;
+    private Transform player;                     //ссылка на игрока (player)
+    private Transform ally;                       //ссылка на союзника (ally)
+    private Transform nose;                       //ссылка на "нос" - куда смотрит юнит
     public LayerMask PlayerLay;
     public LayerMask AllyLay;
     
@@ -23,8 +23,8 @@ public class AIEnemy : MonoBehaviour
     public int damage = 20;                       //урон в секунду
     public bool atacking = false;                 //статус атаки (атакует или нет)
     
-    public bool alive = true;
-    private bool angry = false;
+    public bool alive = true;                     //статус жив/мёртв
+    private bool angry = false;                   //статус атаки
 
     void Start()
     {
