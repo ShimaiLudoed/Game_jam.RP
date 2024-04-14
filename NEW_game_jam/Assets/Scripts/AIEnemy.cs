@@ -7,6 +7,7 @@ public class AIEnemy : MonoBehaviour
 {
     public Necromancer necro;
     public PlayerInfo PI;
+    public AIAlly AA;
     
     private Transform player;
     private Transform ally;
@@ -27,36 +28,51 @@ public class AIEnemy : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        ally = GameObject.FindGameObjectWithTag("Ally").transform;
+        
         PI = FindObjectOfType<PlayerInfo>();
+        AA = FindObjectOfType<AIAlly>();
         
         currentHealt = maxHealth;
     }
     
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.position) < fov)
+        if (Vector2.Distance(transform.position, player.position) < fov || Vector2.Distance(transform.position, ally.position) < fov)
         {
             Angry();
         }
         
-        if (Vector2.Distance(transform.position, player.position) < attackRange)
+        if (Vector2.Distance(transform.position, player.position) < attackRange || Vector2.Distance(transform.position, ally.position) < attackRange)
         { 
             StartCoroutine(AttackCoroutine());
         } 
-    }
-
-    void Chill()
-    {
-        
     }
     
     public void Angry()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+
+        if (AA.tag == "DeadAlly")
+        {
+            Angry();
+        }
     }
     
     IEnumerator AttackCoroutine() 
-    { 
+    {
+        if (AA.gameObject.tag != "DeadAlly")
+        {
+            atacking = true;
+        
+            Debug.Log("Ally was hitted from " + player.name);
+            AA.TakeDamageAlly(damage);
+        
+            yield return new WaitForSeconds(1f); //кулдаун на атаку
+        
+            atacking = false;
+        }
+        
         atacking = true;
         
         Debug.Log("You was hitted from " + player.name);

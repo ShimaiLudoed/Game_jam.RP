@@ -14,10 +14,10 @@ public class AIAlly : MonoBehaviour
 
     public float fov;
     public float speed;
-    public float attackRange = 1.5f;
+    public float attackRange;
     public int maxHealth;
     public int currentHealt;
-    public int damage = 20;
+    public int damage;
     public int desiredChillDistance;
     
 
@@ -112,7 +112,7 @@ public class AIAlly : MonoBehaviour
         atacking = false;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamageAlly(int damage)
     {
         currentHealt -= damage;
 
@@ -125,8 +125,8 @@ public class AIAlly : MonoBehaviour
     public void Dead()
     {
         alive = false;
-        //necro.AddDeadEnemy(gameObject);
         GetComponent<Collider2D>().enabled = false;
+        gameObject.tag = "DeadAlly";
         this.enabled = false;
     }
 
@@ -135,7 +135,7 @@ public class AIAlly : MonoBehaviour
         alive = true;
     }
 
-    private void OnDrawGizmosSelected() // Метод для визуализации радиуса атаки в редакторе
+    private void OnDrawGizmosSelected()
     {
         if (nose == null)
         {
