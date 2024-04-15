@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInfo : MonoBehaviour
 {
-    public SceneSwitcher sceneSwitcher; // Ссылка на компонент SceneSwitcher
     public AIEnemy enemy;
     
     public int maxHealth = 300;
@@ -30,7 +29,6 @@ public class PlayerInfo : MonoBehaviour
     void GameOver()
     {
         Debug.Log("YOU ARE DEAD!");
-        sceneSwitcher.SwitchToStartScene(); // Вызываем метод переключения сцен
+        
     }
-    
 }
