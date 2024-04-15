@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d6c3cc4753b0a994d9cdefdbce319a8a
+guid: 732c87f57ab80224ead2f0771fa1ce8f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Roof_green_01_0
+      name: "\u0442\u0435\u043B\u0435\u0433\u0430_0"
       rect:
         serializedVersion: 2
-        x: 143
-        y: 424
-        width: 195
-        height: 113
+        x: 306
+        y: 269
+        width: 123
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f822130e9bb181429a9822e790730a6
-      internalID: -295269577
+      spriteID: 1e4b876c52f4e8647ad68a46879f8b91
+      internalID: -2139367237
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Roof_green_01_0: -295269577
+      "\u0442\u0435\u043B\u0435\u0433\u0430_0": -2139367237
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
