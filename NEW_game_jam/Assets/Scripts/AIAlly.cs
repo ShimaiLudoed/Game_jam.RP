@@ -8,7 +8,7 @@ public class AIAlly : MonoBehaviour
     public AIEnemy AE;
 
     private Transform player;
-    private Transform enemy;
+    private GameObject enemy;
     public Transform nose;
     public LayerMask EnemyLay;
 
@@ -30,7 +30,7 @@ public class AIAlly : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
+        
         AE = FindObjectOfType<AIEnemy>();
 
         currentHealt = maxHealth;
@@ -38,6 +38,8 @@ public class AIAlly : MonoBehaviour
 
     void Update()
     {
+        
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
         SearchEnemy();
         if (angry)
         {
@@ -48,7 +50,7 @@ public class AIAlly : MonoBehaviour
             Chill();
         }
         
-        if (Vector2.Distance(transform.position, enemy.position) < attackRange)
+        if (enemy!=null && Vector2.Distance(transform.position, enemy.transform.position) < attackRange)
         {
             StartCoroutine(AttackCoroutineAI());
         }
@@ -92,7 +94,7 @@ public class AIAlly : MonoBehaviour
 
     public void Angry()
     {
-        transform.position = Vector2.MoveTowards(transform.position, enemy.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, enemy.transform.position, speed * Time.deltaTime);
 
         if (AE.tag == "Dead")
         {

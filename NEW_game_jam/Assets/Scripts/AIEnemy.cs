@@ -9,7 +9,7 @@ public class AIEnemy : MonoBehaviour
     public AIAlly AA;                             //экзепляр союзника (ally)
     
     private Transform player;                     //ссылка на игрока (player)
-    private Transform ally;                       //ссылка на союзника (ally)
+    private GameObject ally;                       //ссылка на союзника (ally)
     public Transform nose;                        //ссылка на "нос" - куда смотрит юнит
     public LayerMask PlayerLay;
     public LayerMask AllyLay;
@@ -32,7 +32,7 @@ public class AIEnemy : MonoBehaviour
       
         
         PI = FindObjectOfType<PlayerInfo>();
-        ally = GameObject.FindGameObjectWithTag("Ally").transform;
+     
         AA = FindObjectOfType<AIAlly>();
         
         currentHealt = maxHealth;
@@ -51,12 +51,16 @@ public class AIEnemy : MonoBehaviour
             StartCoroutine(AttackCoroutinePlayer());
         }
 
-        if (Vector2.Distance(transform.position, ally.position) < fov)
+        ally = GameObject.FindGameObjectWithTag("Ally");
+        
+        if (ally!=null && Vector2.Distance(transform.position, ally.transform.position) < fov)
         {
+            
             AngryAlly();
+            
         }
 
-        if (Vector2.Distance(transform.position, ally.position) < attackRange)
+        if (ally!=null && Vector2.Distance(transform.position, ally.transform.position) < attackRange)
         {
             StartCoroutine(AttackCoroutineAlly());
         }
@@ -73,12 +77,12 @@ public class AIEnemy : MonoBehaviour
     
     public void AngryAlly()
     {
-        if (Vector2.Distance(transform.position, ally.position) > attackRange - 1f) 
+        if (Vector2.Distance(transform.position, ally.transform.position) > attackRange - 1f) 
         {
-            transform.position = Vector2.MoveTowards(transform.position, ally.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, ally.transform.position, speed * Time.deltaTime);
         }
 
-        if (AA.tag == "DeadAlly")
+        if (ally!=null && AA.tag == "DeadAlly")
         {
             AngryPlayer();
         }
@@ -101,7 +105,7 @@ public class AIEnemy : MonoBehaviour
     
     IEnumerator AttackCoroutineAlly() 
     {
-        if (!atacking)  // Проверяем, не атакует ли враг уже
+        if (atacking)  // Проверяем, не атакует ли враг уже
         {
             atacking = true;  // Устанавливаем статус атаки
 

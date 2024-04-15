@@ -14,16 +14,16 @@ AnimatorStateMachine:
     m_Position: {x: -140, y: -730, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7340199230245497468}
-    m_Position: {x: 450, y: 580, z: 0}
+    m_Position: {x: 510, y: 820, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7856908847278779616}
-    m_Position: {x: -170, y: 530, z: 0}
+    m_Position: {x: -410, y: 900, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5129052036929415861}
     m_Position: {x: -540, y: -280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7551947079371929070}
-    m_Position: {x: 1000, y: 50, z: 0}
+    m_Position: {x: 1000, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3886650655327330564}
     m_Position: {x: 870, y: -640, z: 0}
@@ -35,11 +35,11 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -490, y: 250, z: 0}
+  m_AnyStatePosition: {x: -630, y: 170, z: 0}
   m_EntryPosition: {x: -490, y: -30, z: 0}
-  m_ExitPosition: {x: 750, y: 100, z: 0}
+  m_ExitPosition: {x: 900, y: 880, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -7551947079371929070}
+  m_DefaultState: {fileID: 5129052036929415861}
 --- !u!1101 &-8781753233637873054
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -324,7 +324,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: Hero.Move
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7856908847278779616}
   m_Solo: 0
