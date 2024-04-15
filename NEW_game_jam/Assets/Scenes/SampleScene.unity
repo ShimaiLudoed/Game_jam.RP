@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 440463678}
   - component: {fileID: 440463672}
   - component: {fileID: 440463675}
+  - component: {fileID: 440463679}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -446,6 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9cf279624511a43892156b7d1ec8b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneSwitcher: {fileID: 0}
   enemy: {fileID: 0}
   maxHealth: 1000
   currentHealth: 0
@@ -466,6 +468,18 @@ MonoBehaviour:
   Ally: {fileID: 5234469754114611430, guid: 84bfcf79a971db14faeb6ca0736552ba, type: 3}
   radiusSummon: 3
   deadEnemies: []
+--- !u!114 &440463679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440463666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221f96da3e0d2084a8a67c4013a09b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &465472823
 PrefabInstance:
   m_ObjectHideFlags: 0
