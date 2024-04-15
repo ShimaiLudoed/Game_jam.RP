@@ -14,17 +14,17 @@ public class AIAlly : MonoBehaviour
 
     public float fov;
     public float speed;
-    public float attackRange;
+    public float attackRange = 1.5f;
     public int maxHealth;
     public int currentHealt;
     public int damage;
     public int desiredChillDistance;
     
-
     public bool alive = true;
     private bool angry = false;
     private bool chill = true;
     public bool atacking = false;
+    
 
     void Start()
     {
@@ -38,35 +38,34 @@ public class AIAlly : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, enemy.position) < fov && AE.alive == true)
-        {
-            chill = false;
-            angry = true;
-        }
-        else if (Vector2.Distance(transform.position, enemy.position) > fov)
-        {
-            angry = false;
-            chill = true;
-        }
-
-        if (angry == true)
+        if (!chill)
         {
             Angry();
         }
-
-        if (chill == true)
+        else if (chill == true)
         {
             Chill();
         }
+    }
 
-        if (atacking)
+    void SearchEnemy()
+    {
+        GameObject[] Enemies = GameObject.FindGameObjectsWithTag("Enemy"); // Получаем все мертвые враги
+        
+        foreach (GameObject EnemyClose in Enemies)
         {
-            return;
-        }
-
-        if (Vector2.Distance(transform.position, enemy.position) < attackRange)
-        {
-            StartCoroutine(AttackCoroutine());
+            if (Vector2.Distance(transform.position, EnemyClose.transform.position) < fov)
+            {
+                chill = false;
+                angry = true;
+                Debug.Log("ИСПАНЦЫ!");
+            }
+            else if ((Vector2.Distance(transform.position, EnemyClose.transform.position) > fov))
+            {
+                angry = false;
+                chill = true;
+                Debug.Log("Спакуха, нет никого");
+            }
         }
     }
 

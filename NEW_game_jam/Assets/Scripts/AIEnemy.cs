@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class AIEnemy : MonoBehaviour
 {
-    //public Necromancer necro;
     public PlayerInfo PI;                         //экземпляр игрока (player)
     public AIAlly AA;                             //экзепляр союзника (ally)
     
@@ -22,10 +21,10 @@ public class AIEnemy : MonoBehaviour
     public int currentHealt;                      //актуальное здоровье
     public int damage;                            //урон в секунду
     
-    
-    public bool atacking = false;                 //статус атаки (атакует или нет)
-    public bool alive = true;                     //статус жив/мёртв
+    public bool alive = true;
     private bool angry = false;                   //статус атаки
+    public bool atacking = false;                 //статус атаки (атакует или нет)//статус жив/мёртв
+    
 
     void Start()
     {
