@@ -8,6 +8,6 @@ public class MainMenuController : MonoBehaviour
     public void PlayGame()
     {
         // Загрузить сцену с игрой (с предварительным настройками загрузки)
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Arkadiy");
     }
 }
