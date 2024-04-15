@@ -57,8 +57,7 @@ public class WASD : MonoBehaviour
             moving = true;
 
         }
-
-        _anim.Ismove = _isMove;
+        
     }
 
     public void SetSpriteDirection()

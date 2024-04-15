@@ -29,9 +29,10 @@ public class AIEnemy : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        ally = GameObject.FindGameObjectWithTag("Ally").transform;
+      
         
         PI = FindObjectOfType<PlayerInfo>();
+        ally = GameObject.FindGameObjectWithTag("Ally").transform;
         AA = FindObjectOfType<AIAlly>();
         
         currentHealt = maxHealth;
@@ -39,6 +40,7 @@ public class AIEnemy : MonoBehaviour
     
     void Update()
     {
+        
         if (Vector2.Distance(transform.position, player.position) < fov)
         {
             AngryPlayer();

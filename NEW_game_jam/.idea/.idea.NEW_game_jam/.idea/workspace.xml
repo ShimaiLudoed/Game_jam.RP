@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1bfac566-dabb-4e9a-8548-7b3fc5a4b5ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NEW_game_jam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NEW_game_jam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Plaza_B1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Plaza_B1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test_Scene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test_Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimFromMisha/Hero.Attack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimFromMisha/Hero.Attack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimFromMisha/Hero.Damaged.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimFromMisha/Hero.Damaged.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimFromMisha/Hero.Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimFromMisha/Hero.Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimFromMisha/Hero.Move.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimFromMisha/Hero.Move.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimFromMisha/Hero.Summon .anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimFromMisha/Hero.Summon .anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimFromMisha/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimFromMisha/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimFromMisha/hero.Die.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimFromMisha/hero.Die.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AIEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AIEnemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Working/WASD.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Working/WASD.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +29,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Fireball.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FollowCamera.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -98,7 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713033635827</updated>
       <workItem from="1713033638111" duration="3096000" />
-      <workItem from="1713183544794" duration="2389000" />
+      <workItem from="1713183544794" duration="3566000" />
     </task>
     <servers />
   </component>
