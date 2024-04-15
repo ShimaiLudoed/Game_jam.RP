@@ -38,11 +38,12 @@ public class AIAlly : MonoBehaviour
 
     void Update()
     {
-        if (!chill)
+        SearchEnemy();
+        if (angry)
         {
             Angry();
         }
-        else if (chill == true)
+        else
         {
             Chill();
         }
@@ -50,22 +51,29 @@ public class AIAlly : MonoBehaviour
 
     void SearchEnemy()
     {
-        GameObject[] Enemies = GameObject.FindGameObjectsWithTag("Enemy"); // Получаем все мертвые враги
-        
+        GameObject[] Enemies = GameObject.FindGameObjectsWithTag("Enemy"); // Получаем все враги на сцене
+        bool enemyClose = false;
+
         foreach (GameObject EnemyClose in Enemies)
         {
             if (Vector2.Distance(transform.position, EnemyClose.transform.position) < fov)
             {
-                chill = false;
-                angry = true;
-                Debug.Log("ИСПАНЦЫ!");
+                enemyClose = true;
+                break; // Если хотя бы один враг близко, прекращаем поиск
             }
-            else if ((Vector2.Distance(transform.position, EnemyClose.transform.position) > fov))
-            {
-                angry = false;
-                chill = true;
-                Debug.Log("Спакуха, нет никого");
-            }
+        }
+
+        if (enemyClose)
+        {
+            chill = false;
+            angry = true;
+            Debug.Log("ИСПАНЦЫ!");
+        }
+        else
+        {
+            angry = false;
+            chill = true;
+            Debug.Log("Спакуха, нет никого");
         }
     }
 
