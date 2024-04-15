@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - enemy
+  - Enemy
+  - Ally
+  - Dead
+  - DeadAlly
   layers:
   - Default
   - TransparentFX
@@ -13,8 +16,8 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
-  - 
+  - Player
+  - Ally
   - 
   - 
   - 

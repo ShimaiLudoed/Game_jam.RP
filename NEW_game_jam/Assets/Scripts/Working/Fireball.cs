@@ -5,16 +5,13 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
+    public AIEnemy enemy;
+    
     public GameObject HitEffect;
     public int damage = 25;
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
-        }
+        AIEnemy enemy = collision.gameObject.GetComponent<AIEnemy>();
 
         GameObject effect = Instantiate(HitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 1f);
