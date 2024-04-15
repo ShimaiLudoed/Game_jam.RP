@@ -47,6 +47,11 @@ public class AIAlly : MonoBehaviour
         {
             Chill();
         }
+        
+        if (Vector2.Distance(transform.position, enemy.position) < attackRange)
+        {
+            StartCoroutine(AttackCoroutineAI());
+        }
     }
 
     void SearchEnemy()
@@ -97,7 +102,7 @@ public class AIAlly : MonoBehaviour
         }
     }
 
-    IEnumerator AttackCoroutine()
+    IEnumerator AttackCoroutineAI()
     {
         atacking = true;
 
